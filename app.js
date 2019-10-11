@@ -1,5 +1,5 @@
 // Set constraints for the video stream
-var front = false;
+var front = true;
 //default back cam?
 //var constraints = {video: {facingMode:'user'}, audio: false };
 var constraints = {video: {facingMode: front ? 'user' : 'environment'}};
