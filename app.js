@@ -51,13 +51,8 @@ cameraTrigger.onclick = function() {
 // });
 
 cameraSwitch.onclick = function(){
-
-    if(track == null) return
-    track.getTracks().forEach(t => {
-        t.stop();
-    });
-    //cameraView.pause();
-    //cameraView.srcObject = null;
+    cameraView.pause();
+    cameraView.srcObject = null;
     front = !front; 
     cameraStart();
 };
