@@ -23,6 +23,7 @@ function cameraStart() {
         .then(function(stream) {
             track = stream.getTracks()[0];
             cameraView.srcObject = stream;
+            cameraView.play();
         })
         .catch(function(error) {
             console.error("Oops. Something is broken.", error);
@@ -50,8 +51,13 @@ cameraTrigger.onclick = function() {
 // });
 
 cameraSwitch.onclick = function(){
-    cameraView.pause();
-    cameraView.srcObject = null;
+
+    if(stream == null) return
+    stream.getTracks().forEach(t => {
+        t.stop();
+    });
+    //cameraView.pause();
+    //cameraView.srcObject = null;
     front = !front; 
     cameraStart();
 };
