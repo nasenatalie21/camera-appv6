@@ -52,8 +52,8 @@ cameraTrigger.onclick = function() {
 
 cameraSwitch.onclick = function(){
 
-    if(stream == null) return
-    stream.getTracks().forEach(t => {
+    if(track == null) return
+    track.getTracks().forEach(t => {
         t.stop();
     });
     //cameraView.pause();
